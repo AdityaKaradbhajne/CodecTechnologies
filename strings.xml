@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AI Chat Assistant</string>
+    <string name="hint_message">Type a message…</string>
+    <string name="new_chat">New Chat</string>
+    <string name="chat_history">Chat History</string>
+    <string name="voice_input_prompt">Speak your message…</string>
+    <string name="send">Send</string>
+    <string name="delete_session">Delete session</string>
+    <string name="no_history">No chat history yet.\nStart a new conversation!</string>
+    <string name="error_mic_permission">Microphone permission is needed for voice input</string>
+    <string name="error_no_speech">Speech recognition not available on this device</string>
+    <string name="messages_count">%d messages</string>
+    <string name="confirm_delete_title">Delete conversation?</string>
+    <string name="confirm_delete_msg">This will permanently delete all messages in this chat.</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+</resources>

@@ -1,0 +1,72 @@
+// ─── app/build.gradle.kts ─────────────────────────────────────────────────────
+//
+// Paste the entire block below into your existing dependencies { } section.
+// Also add the two lines at the top of the file (outside dependencies).
+//
+// ─────────────────────────────────────────────────────────────────────────────
+
+// ADD THESE LINES at the top of app/build.gradle.kts (outside any block):
+// val geminiApiKey: String = project.findProperty("GEMINI_API_KEY") as String? ?: ""
+
+// Inside android { defaultConfig { ... } } add:
+// buildConfigField("String", "GEMINI_API_KEY", "\"$geminiApiKey\"")
+
+// Also enable BuildConfig generation inside android { }:
+// buildFeatures { buildConfig = true }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DEPENDENCIES
+// ─────────────────────────────────────────────────────────────────────────────
+
+dependencies {
+
+    // ── Core Android ──────────────────────────────────────────────────────────
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.11.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+
+    // ── ViewModel + LiveData / StateFlow ──────────────────────────────────────
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+    implementation("androidx.activity:activity-ktx:1.8.2")
+
+    // ── Coroutines ────────────────────────────────────────────────────────────
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+
+    // ── Room Database ─────────────────────────────────────────────────────────
+    implementation("androidx.room:room-runtime:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")        // Coroutine + Flow support
+    kapt("androidx.room:room-compiler:2.6.1")              // Annotation processor
+
+    // ── Gemini AI SDK ─────────────────────────────────────────────────────────
+    implementation("com.google.ai.client.generativeai:generativeai:0.7.0")
+
+    // ── RecyclerView ──────────────────────────────────────────────────────────
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+
+    // ── Testing ───────────────────────────────────────────────────────────────
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// local.properties  (DO NOT commit this file — it's in .gitignore)
+// ─────────────────────────────────────────────────────────────────────────────
+//
+// Add this line to your local.properties file:
+//   GEMINI_API_KEY=your_api_key_here
+//
+// Get your free API key at: https://aistudio.google.com/app/apikey
+//
+// ─────────────────────────────────────────────────────────────────────────────
+// settings.gradle.kts  — make sure this maven repo is present
+// ─────────────────────────────────────────────────────────────────────────────
+//
+// dependencyResolutionManagement {
+//     repositories {
+//         google()
+//         mavenCentral()
+//     }
+// }
