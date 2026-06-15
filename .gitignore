@@ -1,0 +1,33 @@
+### Android ###
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+*.keystore
+!debug.keystore
+
+### API Keys — NEVER commit these ###
+local.properties
+google-services.json
+
+### Kotlin ###
+*.class
+*.jar
+*.war
+*.ear
+
+### IDE ###
+*.idea/
+*.iws
+out/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/caches
